@@ -1,0 +1,13 @@
+/*
+Nav Bar
+*/
+#logo {
+  max-width: 45px;
+  width: 7.5vw;
+  height: auto; }
+
+.navbar-brand {
+  padding-top: 0 !important; }
+
+.navbar-collapse {
+  flex-grow: 0.3 !important; }
