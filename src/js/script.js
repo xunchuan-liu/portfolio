@@ -1,4 +1,21 @@
 /*
+Nav Menu
+*/
+const links = document.querySelectorAll('.nav-link');
+links.forEach(link => {
+    link.addEventListener('click', navigateLink);
+})
+
+// switch the active nav link
+function navigateLink(e) {    
+    if (e.target.classList.contains('active')) return;
+    else {
+        links.forEach(link => link.classList.remove('active'));
+        e.target.classList.add('active');        
+    }
+}
+
+/*
 Home animation
 */
 
