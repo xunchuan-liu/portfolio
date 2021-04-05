@@ -134,11 +134,11 @@
   }
   
   .scroll-in {
-    animation: in 1s ease forwards;
+    animation: in 0.9s ease forwards;
   }
   
   .scroll-out {
-    animation: out 1s ease forwards;
+    animation: out 0.9s ease forwards;
   }
   
   @keyframes in {
