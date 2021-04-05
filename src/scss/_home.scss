@@ -1,0 +1,90 @@
+@use './theme';
+
+@media (min-width: 700px) {
+    .display1 {
+      font-size: 4rem;
+    }
+  
+    .display2 {
+      font-size: 5rem;
+    }
+  }
+  .display1 {
+    color: theme.$offwhite;
+    font-family: theme.$display1;
+    font-weight: 300;
+    font-size: 2rem;
+    opacity: 0.9;
+  }
+  
+  .display2 {
+    color: theme.$primary;
+    font-family: theme.$display2;
+    font-weight: 300;
+    font-size: 2.1rem;
+  }
+  
+  @media (min-width: 700px) {
+    .display1 {
+      font-size: 4rem;
+    }
+  
+    .display2 {
+      font-size: 5rem;
+    }
+  }
+  #line2 {
+    position: absolute;
+    width: 80%;
+    display: flex;
+    align-items: flex-end;
+    top: 45%;
+    left: 20%;
+  }
+  
+  #hi {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+  }
+  
+  #xunchuan {
+    position: absolute;
+    left: 13%;
+  }
+  
+  #web {
+    position: absolute;
+    left: 13%;
+    transform: translateY(120px);
+    opacity: 0;
+  }
+  
+  .scroll-in {
+    animation: in 1s ease forwards;
+  }
+  
+  .scroll-out {
+    animation: out 1s ease forwards;
+  }
+  
+  @keyframes in {
+    0% {
+      transform: translateY(120px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes out {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-120px);
+      opacity: 0;
+    }
+  }

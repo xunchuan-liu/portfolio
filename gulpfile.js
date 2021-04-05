@@ -4,7 +4,7 @@ sass.compiler = require('sass');
 const sync = require('browser-sync').create();
 
 gulp.task('sass', function() {
-    return gulp.src('src/scss/**/*.scss')
+    return gulp.src('src/scss/**/[^_]*.scss')
         .pipe(sass())
         .pipe(gulp.dest('src/css'))
         .pipe(sync.reload({

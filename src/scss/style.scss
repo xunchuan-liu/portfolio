@@ -1,0 +1,9 @@
+@use './theme';
+@use './nav';
+@use './home';
+
+body {
+    background-color: theme.$background;
+    font-family: theme.$primary-font;
+    color: theme.$offwhite;
+  }
