@@ -1,9 +1,18 @@
 @use './theme';
 @use './nav';
 @use './home';
+@use './projects';
+
+* {
+  box-sizing: border-box;
+}
 
 body {
     background-color: theme.$background;
     font-family: theme.$primary-font;
     color: theme.$offwhite;
-  }
+}
+
+section {
+  min-height: 100vh;
+}
