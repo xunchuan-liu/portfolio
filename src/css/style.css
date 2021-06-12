@@ -2,6 +2,7 @@
   max-width: 55px;
   width: 7.5vw;
   height: auto;
+  transition: width 0.2s ease-out, max-width 0.2s ease-out;
 }
 
 .navbar-brand {
@@ -14,22 +15,70 @@
 
 .nav-link {
   font-weight: 200;
+  font-family: Raleway;
   letter-spacing: 0.1px;
+  transition: font-size 0.2s ease-out;
+}
+
+.nav-bar {
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.navbar-scroll-background {
+  background-color: #35345fef;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 7px 0;
+  transition: background-color 0.4s 0.1s ease-in, box-shadow 0.4s 0.1s ease-in !important;
+}
+
+.logo-scroll-size {
+  width: 6.5vw !important;
+  max-width: 35px !important;
+  transition: width 0.3s ease-in, max-width 0.3s ease-in !important;
+}
+
+.nav-link-scroll-size {
+  font-size: 0.85rem;
+  transition: font-size 0.3s ease-in !important;
 }
 
 @media (min-width: 600px) {
   .nav-link {
     font-size: 1.15rem;
   }
+
+  .nav-link-scroll-size {
+    font-size: 1rem;
+    transition: font-size 0.3s ease-in !important;
+  }
 }
 @media (min-width: 1100px) {
   .nav-link {
     font-size: 1.2rem;
   }
+
+  .nav-link-scroll-size {
+    font-size: 1.05rem;
+    transition: font-size 0.3s ease-in !important;
+  }
 }
 @media (min-width: 1515px) {
+  #logo {
+    max-width: 65px;
+  }
+
+  .logo-scroll-size {
+    width: 6.5vw !important;
+    max-width: 50px !important;
+    transition: width 0.3s ease-in, max-width 0.3s ease-in !important;
+  }
+
   .nav-link {
     font-size: 1.6rem;
+  }
+
+  .nav-link-scroll-size {
+    font-size: 1.45rem;
+    transition: font-size 0.3s ease-in !important;
   }
 }
 .display1 {
@@ -200,12 +249,148 @@
   padding: 0;
   border: none;
   min-width: 225px;
+  max-width: 415px;
+  border-radius: 5px 5px 4px 4px;
+  height: 80%;
+  cursor: pointer;
 }
 
-.img {
+.card a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.shadow {
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.25) !important;
+  transition: box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
+}
+
+.shadow:hover {
+  box-shadow: #5697D9 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
+  transform: translateY(-15px);
+}
+
+.shadow:hover .img-wrapper, .shadow:hover .text-wrapper {
+  transform: scale(1.01);
+}
+
+.img-wrapper {
   width: 100%;
-  height: 350px;
-  background: blue;
+  background: #4e5ab4;
+  border-radius: 4px 4px 0 0;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px 4px 0 0;
+}
+
+.text-wrapper {
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  padding: 0.1rem;
+  padding-left: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.text-wrapper h1 {
+  letter-spacing: 0.4px;
+  font-size: 2.1rem;
+}
+
+.text-wrapper p {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+#about {
+  display: flex;
+  align-items: center;
+}
+
+.profile-wrapper {
+  border-radius: 50%;
+}
+
+.profile-wrapper > img {
+  max-width: 110%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px 0;
+}
+
+.bio-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0.2px;
+  line-height: 1.6;
+  padding-right: 10rem;
+}
+
+.bio-wrapper h1 {
+  font-family: Comfortaa, sans-serif;
+  font-size: 1.85rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+  color: #94b7db;
+}
+
+.bio-wrapper p {
+  font-size: 1.25rem;
+  margin-bottom: 1.3rem;
+  font-weight: 400;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact form {
+  max-width: 550px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #1b1b1b;
+}
+
+.input-wrapper textarea {
+  min-height: 160px !important;
+}
+
+.send-button {
+  width: 40%;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.icons {
+  position: relative;
+  max-width: 400px;
+  top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.icons a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.icons i {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 * {
@@ -214,7 +399,7 @@
 
 body {
   background-color: #414073;
-  font-family: Raleway, sans-serif;
+  font-family: Quicksand, sans-serif;
   color: #FFFAFA;
 }
 

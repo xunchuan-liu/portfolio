@@ -1,0 +1,48 @@
+@use './theme';
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+}
+
+#contact form {
+    max-width: 550px;        
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: theme.$offblack;        
+}
+
+.input-wrapper textarea {
+    min-height: 160px !important;
+}
+
+.send-button {
+    width: 40%;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.icons {
+    position: relative;
+    max-width: 400px;
+    top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icons a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.icons i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}

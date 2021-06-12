@@ -2,18 +2,59 @@
 Nav Menu
 */
 const links = document.querySelectorAll('.nav-link');
-links.forEach(link => {
-    link.addEventListener('click', navigateLink);
-})
+const navBar = document.querySelector('.navbar');
+const logo = document.querySelector('#logo');
+const homeLink = document.querySelector('#home-link');
+const projectsLink = document.querySelector('#projects-link');
+const aboutLink = document.querySelector('#about-link');
+const contactLink = document.querySelector('#contact-link');
 
 // switch the active nav link
-function navigateLink(e) {    
-    if (e.target.classList.contains('active')) return;
+links.forEach(link => link.addEventListener('click', e => navigateLink(e.target)));
+function navigateLink(link) {    
+    if (link.classList.contains('active')) return;
     else {
         links.forEach(link => link.classList.remove('active'));
-        e.target.classList.add('active');        
+        link.classList.add('active');        
     }
 }
+
+// resize when scrolled down
+// update active link in nav menu if different section is reached
+window.onscroll = () => {
+    resizeNav();
+    updateLinks();
+}
+function resizeNav() {
+    const heading = document.querySelector('#hi').offsetTop; 
+    if (window.scrollY > heading) {        
+        navBar.classList.add('navbar-scroll-background');
+        logo.className = 'logo-scroll-size';
+        links.forEach(link => link.classList.add('nav-link-scroll-size'));
+    }
+    else {
+        navBar.classList.remove('navbar-scroll-background');
+        logo.className = '';
+        links.forEach(link => link.classList.remove('nav-link-scroll-size'));
+    }
+}
+
+function updateLinks() {
+    const projectSection = document.querySelector('#projects').offsetTop;
+    const aboutSection = document.querySelector('#about').offsetTop;
+    const contactSection = document.querySelector('#contact').offsetTop;
+    if (window.scrollY >= contactSection)
+        navigateLink(contactLink);
+    else if (window.scrollY >= aboutSection)
+        navigateLink(aboutLink);
+    else if (window.scrollY >= projectSection)
+        navigateLink(projectsLink);
+    else
+        navigateLink(homeLink);
+}
+
+resizeNav(); // resize on load if necessary
+updateLinks(); // get correct active link on load
 
 /*
 Home animation

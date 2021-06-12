@@ -1,8 +1,10 @@
+// DEVELOPMENT
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 sass.compiler = require('sass');
 const sync = require('browser-sync').create();
 
+// convert sass to css
 gulp.task('sass', function() {
     return gulp.src('src/scss/**/[^_]*.scss')
         .pipe(sass())
@@ -12,6 +14,7 @@ gulp.task('sass', function() {
         }));
 })
 
+// automatically reload browser when files change
 gulp.task('reload', function() {
     sync.init({
         server: {
@@ -23,4 +26,49 @@ gulp.task('reload', function() {
     gulp.watch('src/js/**/*.js').on('change', sync.reload);
 })
 
+// start dev server
 gulp.task('dev', gulp.series('sass', 'reload'));
+
+
+
+// PRODUCTION
+const useref = require('gulp-useref');
+const gulpIf = require('gulp-if');
+const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify-es').default;
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
+const cache = require('gulp-cache');
+const del = require('del');
+
+// minifies js and css files
+gulp.task('minify:code', function(){
+  return gulp.src('src/*.html')
+    .pipe(useref())
+    .pipe(gulpIf('*.js', uglify()))    
+    .pipe(gulpIf('*.css', postcss([autoprefixer(), cssnano()])))
+    .pipe(gulp.dest('dist'))
+});
+
+// minifies images and caches them
+gulp.task('minify:image', function() {
+    return gulp.src('src/img/**/*.+(png|jpg|gif|svg)')
+        .pipe(cache(imagemin()))
+        .pipe(gulp.dest('dist/img'))
+})
+
+// clear the cache
+gulp.task('cache:clear', function() {
+    return cache.clearAll();
+})
+
+// clean existing dist/ folder
+gulp.task('clean:dist', function(done) {
+  del.sync('dist');
+  done();
+})
+
+// tasks to run for build
+gulp.task('optimize', gulp.parallel('minify:code', 'minify:image'));
+gulp.task('build', gulp.series('clean:dist', 'sass', 'optimize'));

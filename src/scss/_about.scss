@@ -1,0 +1,40 @@
+@use './theme';
+
+#about {
+    display: flex;
+    align-items: center;
+}
+
+.profile-wrapper {
+    border-radius: 50%;    
+}
+
+.profile-wrapper > img {
+    max-width: 110%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px 0;
+}
+
+.bio-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
+    padding-right: 10rem;
+}
+
+.bio-wrapper h1 {
+    font-family: theme.$display1;
+    font-size: 1.85rem;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+    color: theme.$primary-light;
+}
+
+.bio-wrapper p {
+    font-size: 1.25rem;
+    margin-bottom: 1.3rem;
+    font-weight: 400;           
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
 
@@ -10,20 +11,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Booststrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/48404103ea.js" crossorigin="anonymous"></script>    
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Pompiere&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Pompiere&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="icon" href="img/logo.png">
 
+    <!--build:css css/styles.min.css-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--endbuild-->   
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand navbar-dark mt-sm-2" role="navigation">
+    <nav class="navbar fixed-top navbar-expand navbar-dark" role="navigation">
         <div class="container-fluid">
           <a class="navbar-brand ms-md-2" href="">
               <img id="logo" src="img/logo.png" alt="">
@@ -34,16 +41,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-lg-0">
               <li class="nav-item me-md-5 me-sm-2">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a id='home-link' class="nav-link active" aria-current="page" href="#">home</a>
               </li>
               <li class="nav-item me-md-5 me-sm-2">
-                <a class="nav-link" href="#projects">Projects</a>
+                <a id='projects-link' class="nav-link" href="#projects">projects</a>
               </li>
               <li class="nav-item me-md-5 me-sm-2">
-                <a class="nav-link" href="#">About</a>
+                <a id='about-link' class="nav-link" href="#about">about</a>
               </li>
               <li class="nav-item me-md-5 me-sm-2">
-                <a class="nav-link" href="#">Contact</a>
+                <a id='contact-link' class="nav-link" href="#contact">contact</a>
               </li>              
           </div>
         </div>
@@ -60,58 +67,142 @@
         </section>        
         <section id='projects' class='container-fluid pt-md-2'>
           <div class='container-md wrapper pt-3 pt-md-5'>
-            <div class='row justify-content-evenly my-sm-5'>
-              <article class='col-8 col-sm-5 my-3 my-sm-0 card'>
-                <div class='img'></div>
-                <h1>Fiitsplore</h1>
-                <p>A cheeky outdoor social fitness app</p>
-              </article>
-              <article class='col-8 col-sm-5 my-3 my-sm-0 card'>
-                <div class='img'></div>
-                <h1>Fiitsplore</h1>
-                <p>A cheeky outdoor social fitness app</p>
+            <div class='row justify-content-evenly my-sm-5'>              
+              <article class='col-8 col-sm-5 my-3 my-sm-0 card shadow'>
+                <a href='https://fiitsplore.web.app/' target='_blank' alt='Link to FiitSplore'>
+                  <div class='img-wrapper'>
+                    <img src='./img/fiitsplore.png' alt='Fiitsplore screenshot'/>
+                  </div>
+                  <div class='text-wrapper'>
+                    <h1>Fiitsplore</h1>
+                    <p>A cheeky outdoor social fitness app</p>
+                  </div>
+                </a>                
+              </article>              
+              <article class='col-8 col-sm-5 my-3 my-sm-0 card shadow'>
+                <a href='https://lura-services.com/' target='_blank' alt='Link to Lura'>
+                  <div class='img-wrapper'>
+                    <img src='./img/lura.png' alt='Lura screenshot'/>
+                  </div>
+                  <div class='text-wrapper'>
+                    <h1>Lura</h1>
+                    <p>An E-commerce platform for sustainable textiles</p>
+                  </div>
+                </a>                
               </article>
             </div>
             <div class='row justify-content-evenly my-sm-5'>
-              <article class='col-8 col-sm-5 my-3 my-sm-0 card'>
-                <div class='img'></div>
-                <h1>Fiitsplore</h1>
-                <p>A cheeky outdoor social fitness app</p>
+              <article class='col-8 col-sm-5 my-3 my-sm-0 card shadow'>
+                <a href='https://indigenoussteam.org/' target='_blank' alt='Link to ISTEAM'>
+                  <div class='img-wrapper'>
+                    <img src='./img/isteam.png' alt='ISTEAM screenshot'/>
+                  </div>
+                  <div class='text-wrapper'>
+                    <h1>Indigenous STEAM</h1>
+                    <p>A website with activities for Indigenous families and educators</p>
+                  </div>
+                </a>
               </article>
-              <article class='col-8 col-sm-5 my-3 my-sm-0 card'>
-                <div class='img'></div>
-                <h1>Fiitsplore</h1>
-                <p>A cheeky outdoor social fitness app</p>
+              <article class='col-8 col-sm-5 my-3 my-sm-0 card shadow'>
+                <a href='https://tempo-873ec.web.app/' target='_blank' alt='Link to Tempo'>
+                  <div class='img-wrapper'>
+                    <img src='./img/tempo.png' alt='Tempo screenshot'/>
+                  </div>
+                  <div class='text-wrapper'>
+                    <h1>Tempo</h1>
+                    <p>A fun studying app featuring Pomodoro cycles and lots of fish</p>
+                  </div>
+                </a>
               </article>
             </div>
             <div class='row justify-content-evenly my-sm-5'>
-              <article class='col-8 col-sm-5 my-3 my-sm-0 card'>
-                <div class='img'></div>
-                <h1>Fiitsplore</h1>
-                <p>A cheeky outdoor social fitness app</p>
+              <article class='col-8 col-sm-5 my-3 my-sm-0 card shadow'>
+                <a href='https://xunchuan-liu.github.io/Zelda/' target='_blank' alt='Link to Zelda'>
+                  <div class='img-wrapper'>
+                    <img src='./img/zelda.png' alt='Zelda screenshot'/>
+                  </div>
+                  <div class='text-wrapper'>
+                    <h1>Zelda</h1>
+                    <p>A Zoom meeting assistant that turns speech into meeting commands</p>
+                  </div>
+                </a>
               </article>
-              <article class='col-8 col-sm-5 my-3 my-sm-0 card'>
-                <div class='img'></div>
-                <h1>Fiitsplore</h1>
-                <p>A cheeky outdoor social fitness app</p>
+              <article class='col-8 col-sm-5 my-3 my-sm-0 card shadow'>
+                <a href='https://xunchuan-liu.github.io/CatChat/' target='_blank' alt='Link to CatChat'>
+                  <div class='img-wrapper'>
+                    <img src='./img/catchat.png' alt='Catchat screenshot'/>
+                  </div>
+                  <div class='text-wrapper'>
+                    <h1>CatChat</h1>
+                    <p>A design prototype for an online mental health chat forum</p>
+                  </div>
+                </a>
               </article>
             </div>            
           </div>            
-        </section>
-        <!--
-        <section>
-            <h1>About</h1>
-        </section>
-        <section>
-            <h1>Contact</h1>
-        </section>-->
-    </main>
-    <!--
-    <footer>
-        <p>Copyright</p>
-    </footer>-->
+        </section>        
+        <section id='about'>
+          <div class='row justify-content-between mx-4 mt-5'>
+            <div class='col-4 profile-wrapper'>
+              <img src='./img/profile.png'/>
+            </div>
+            <div class='col-7 bio-wrapper'>
+              <h1>I'm Xunchuan, a fourth-year undergraduate student studying computer science at Northwestern.</h1>
+              <p>
+                My work has primarily focused on web design, web development, and motion graphics.
+                I am interested in using design and technology
+                as a way to create seamless user experiences and tell meaningful stories.                    
+               </p>
+              <p>
+                I am currently working as a web designer with the Indigenous STEAM research group
+                and as a web developer with the Querrey Simpson Institute for Bioelectronics.
+              </p>
+              <p>
+                Outside of work, you might find me playing music <em>(or just humming)</em>, 
+                cooking a recipe <em>(for disaster)</em>, or traveling somewhere <em>(or nowhere)</em>.  
+              </p>
+            </div>
+          </div>
+        </section>        
+        <section id='contact'>
+            <form class='container d-flex flex-column justify-content-center align-items-center'>            
+              <div class='input-wrapper form-floating mb-3'>                
+                <input type="text" class="form-control" id="name" placeholder='John Doe'/>
+                <label for="name" class='form-label'>name</label>
+              </div>
+              <div class='input-wrapper form-floating mb-3'>        
+                <input type="email" class="form-control" id="email" placeholder='john@doe.com'/>
+                <label for="email" class="form-label">email</label>
+              </div>
+              <div class='input-wrapper form-floating mb-4'>              
+                <textarea class='form-control' id='message' placeholder='Just wanted to say hi!'></textarea>
+                <label for="email" class="form-label">message</label>
+              </div>
+              <button type="submit" class="btn btn-primary send-button p-2">send</button>              
+            </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>  
+            <div class='container d-flex icons'>
+              <a href='https://github.com/xunchuan-liu' target='_blank' alt='Link to my Github'>
+                <i class='fab fa-github'></i>
+              </a>
+              <a href='https://www.linkedin.com/in/xunchuan-liu-728314172/' target='_blank' alt='Link to my LinkedIn'>
+                <i class='fab fa-linkedin'></i>
+              </a>
+              <a href='https://www.youtube.com/channel/UCVX9C-hip0EOpI_C-GFot_g' target='_blank' alt='Link to my YouTube'>
+                <i class='fab fa-youtube'></i>
+              </a>              
+              <i class='fas fa-envelope'></i>              
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright &copy 2021 Xunchuan Liu</p>
+        <p>Logo design by Ryan Teo</p>
+    </footer>
+
+    <!--build:js js/script.min.js-->
+    <script src="js/script.js"></script>
+    <!--endbuild--> 
 </body>
 </html>

@@ -1,7 +1,10 @@
+@use './theme';
+
 #logo {
     max-width: 55px;
     width: 7.5vw;
     height: auto;
+    transition: width 0.2s ease-out, max-width 0.2s ease-out;
   }
   
   .navbar-brand {
@@ -14,12 +17,40 @@
   
   .nav-link {
     font-weight: 200;
+    font-family: Raleway;
     letter-spacing: 0.1px;
+    transition: font-size 0.2s ease-out;
+  }
+
+  .nav-bar {
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+
+  .navbar-scroll-background {
+    background-color: #35345fef;    
+    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 7px 0;
+    transition: background-color 0.4s 0.1s ease-in, box-shadow 0.4s 0.1s ease-in !important;
+  }
+
+  .logo-scroll-size {
+    width: 6.5vw !important;
+    max-width: 35px !important;
+    transition: width 0.3s ease-in, max-width 0.3s ease-in !important;
+  }
+
+  .nav-link-scroll-size {
+    font-size: 0.85rem;
+    transition: font-size 0.3s ease-in !important;
   }
   
   @media (min-width: 600px) {
     .nav-link {
       font-size: 1.15rem;
+    }
+
+    .nav-link-scroll-size {
+      font-size: 1rem;
+      transition: font-size 0.3s ease-in !important;
     }
   }
 
@@ -27,10 +58,32 @@
     .nav-link {
       font-size: 1.2rem;
     }
+
+     .nav-link-scroll-size {
+      font-size: 1.05rem;
+      transition: font-size 0.3s ease-in !important;
+    }
   }
 
   @media (min-width: 1515px) {
+    #logo {
+      max-width: 65px;      
+    }
+
+    .logo-scroll-size {
+      width: 6.5vw !important;
+      max-width: 50px !important;
+      transition: width 0.3s ease-in, max-width 0.3s ease-in !important;
+    }
+
     .nav-link {
       font-size: 1.6rem;
     }
+
+    .nav-link-scroll-size {
+      font-size: 1.45rem;
+      transition: font-size 0.3s ease-in !important;
+    }
+
+
   }
