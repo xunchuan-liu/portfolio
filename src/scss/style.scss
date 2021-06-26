@@ -1,9 +1,11 @@
 @use './theme';
+@use './animation';
 @use './nav';
 @use './home';
 @use './projects';
 @use './about';
 @use './contact';
+@use './footer';
 
 * {
   box-sizing: border-box;
@@ -12,9 +14,22 @@
 body {
     background-color: theme.$background;
     font-family: theme.$primary-font;
-    color: theme.$offwhite;
+    color: theme.$offwhite;    
 }
 
 section {
   min-height: 100vh;
 }
+
+main {
+  display: none;  
+}
+
+nav {
+  visibility: hidden;
+}
+
+footer {
+  visibility: hidden;
+}
+

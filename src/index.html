@@ -21,6 +21,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Pompiere&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js" integrity="sha512-jbTBHn1aXqglu6As1bUWxdPYc9b1uMHtreBM30oW3HbNFDS/eO1n+f98l4qcmw2l7CAdjWSbu3wVjm9SKISOaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- favicon -->
     <link rel="icon" href="img/logo.png">
 
@@ -30,7 +33,10 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand navbar-dark" role="navigation">
+    <!-- animation container-->
+    <div id='animation-container'></div>
+
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark" role="navigation">
         <div class="container-fluid">
           <a class="navbar-brand ms-md-2" href="">
               <img id="logo" src="img/logo.png" alt="">
@@ -61,8 +67,8 @@
             <h1 id="hi" class="display1">hi</h1>
             <div id="line2">
                 <h1 id="im" class="display1">i'm</h1>
-                <h1 id="xunchuan" class="display2 scroll-out">xunchuan</h1>
-                <h1 id="web" class="display2 scroll-in">a web designer and developer</h1>
+                <h1 id="xunchuan" class="display2">xunchuan</h1>
+                <h1 id="web" class="display2">a web designer and developer</h1>
             </div>                        
         </section>        
         <section id='projects' class='container-fluid pt-md-2'>
@@ -142,11 +148,11 @@
           </div>            
         </section>        
         <section id='about'>
-          <div class='row justify-content-between mx-4 mt-5'>
-            <div class='col-4 profile-wrapper'>
+          <div class='row justify-content-center justify-content-md-between align-items-center mx-4 mt-5'>
+            <div class='profile-wrapper col-8 col-sm-5 col-md-4 mb-4 mt-2 mt-md-0 mb-md-0 align-self-center'>
               <img src='./img/profile.png'/>
             </div>
-            <div class='col-7 bio-wrapper'>
+            <div class='col-12 col-md-7 bio-wrapper'>
               <h1>I'm Xunchuan, a fourth-year undergraduate student studying computer science at Northwestern.</h1>
               <p>
                 My work has primarily focused on web design, web development, and motion graphics.
@@ -165,44 +171,60 @@
           </div>
         </section>        
         <section id='contact'>
-            <form class='container d-flex flex-column justify-content-center align-items-center'>            
+            <form method='post' action='https://formsubmit.co/ajax/c930949f076900ffe022de11b10adb59' class='container d-flex flex-column justify-content-center align-items-center'>            
               <div class='input-wrapper form-floating mb-3'>                
-                <input type="text" class="form-control" id="name" placeholder='John Doe'/>
+                <input name='name' type="text" class="form-control" id="name" placeholder='John Doe' required/>
                 <label for="name" class='form-label'>name</label>
               </div>
               <div class='input-wrapper form-floating mb-3'>        
-                <input type="email" class="form-control" id="email" placeholder='john@doe.com'/>
+                <input name='email' type="email" class="form-control" id="email" placeholder='john@doe.com' required/>
                 <label for="email" class="form-label">email</label>
               </div>
               <div class='input-wrapper form-floating mb-4'>              
-                <textarea class='form-control' id='message' placeholder='Just wanted to say hi!'></textarea>
+                <textarea name='message' class='form-control' id='message' placeholder='Just wanted to say hi!' required></textarea>
                 <label for="email" class="form-label">message</label>
               </div>
-              <button type="submit" class="btn btn-primary send-button p-2">send</button>              
-            </form>
-
-            <div class='container d-flex icons'>
-              <a href='https://github.com/xunchuan-liu' target='_blank' alt='Link to my Github'>
-                <i class='fab fa-github'></i>
-              </a>
-              <a href='https://www.linkedin.com/in/xunchuan-liu-728314172/' target='_blank' alt='Link to my LinkedIn'>
-                <i class='fab fa-linkedin'></i>
-              </a>
-              <a href='https://www.youtube.com/channel/UCVX9C-hip0EOpI_C-GFot_g' target='_blank' alt='Link to my YouTube'>
-                <i class='fab fa-youtube'></i>
-              </a>              
-              <i class='fas fa-envelope'></i>              
-            </div>
+              <button type="submit" class="btn btn-primary send-button p-2">send</button>
+              
+              <input type="hidden" name="_template" value="table">              
+            </form>            
         </section>
     </main>
 
-    <footer>
+    <footer class='container-lg d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between mb-4'>
+      <div class='footer-text'>
         <p>Copyright &copy 2021 Xunchuan Liu</p>
-        <p>Logo design by Ryan Teo</p>
+        <p>Logo design by <a class='teo' href='https://www.ryanteo.design' target='_blank'>Ryan Teo</a></p>
+      </div>
+      <div class='footer-icons mb-2 mb-sm-0'>
+        <a href='https://github.com/xunchuan-liu' target='_blank' alt='Link to my Github'>
+          <i class='fab fa-github'></i>
+        </a>
+        <a href='https://www.linkedin.com/in/xunchuan-liu-728314172/' target='_blank' alt='Link to my LinkedIn'>
+          <i class='fab fa-linkedin'></i>
+        </a>
+        <div class='email-dropdown-block'>
+          <i id='email-icon' class='fas fa-envelope'></i>
+          <div class='email-dropdown'>
+            <div class='email-option email-address'>hello@xunchuanliu.com</div>
+            <div class='line-break'></div>
+            <div class='email-option'>
+              <button class='copy-email-button'>Copy email</button>
+            </div>
+            <div class='line-break'></div>
+            <div class='email-option'>
+              <a href='mailto:hello@xunchuanliu.com?subject=Hello'>Send an email</a>
+            </div>
+          </div>
+        </div>
+        <a href='https://www.youtube.com/channel/UCVX9C-hip0EOpI_C-GFot_g' target='_blank' alt='Link to my YouTube'>
+          <i class='fab fa-youtube'></i>
+        </a>                             
+      </div>
     </footer>
 
     <!--build:js js/script.min.js-->
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
     <!--endbuild--> 
 </body>
 </html>

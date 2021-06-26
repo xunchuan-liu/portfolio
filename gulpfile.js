@@ -58,6 +58,19 @@ gulp.task('minify:image', function() {
         .pipe(gulp.dest('dist/img'))
 })
 
+// copy animation json over
+gulp.task('copy:animation', function() {
+    return gulp.src('src/animation/*.json')
+        .pipe(gulp.dest('dist/animation'))
+})
+
+// copy animation assets over
+gulp.task('copy:animation-images', function() {
+    return gulp.src('src/animation/images/*.+(png|jpg|gif|svg)')
+        .pipe(cache(imagemin()))
+        .pipe(gulp.dest('dist/animation/images'))
+})
+
 // clear the cache
 gulp.task('cache:clear', function() {
     return cache.clearAll();
@@ -70,5 +83,5 @@ gulp.task('clean:dist', function(done) {
 })
 
 // tasks to run for build
-gulp.task('optimize', gulp.parallel('minify:code', 'minify:image'));
+gulp.task('optimize', gulp.parallel('minify:code', 'minify:image', 'copy:animation', 'copy:animation-images'));
 gulp.task('build', gulp.series('clean:dist', 'sass', 'optimize'));

@@ -1,3 +1,17 @@
+#animation-container {
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+nav {
+  display: none;
+}
+
 #logo {
   max-width: 55px;
   width: 7.5vw;
@@ -24,8 +38,15 @@
   transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
+.navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
 .navbar-scroll-background {
-  background-color: #35345fef;
+  background-color: #35345ffa;
   box-shadow: rgba(0, 0, 0, 0.2) 0 2px 7px 0;
   transition: background-color 0.4s 0.1s ease-in, box-shadow 0.4s 0.1s ease-in !important;
 }
@@ -41,6 +62,45 @@
   transition: font-size 0.3s ease-in !important;
 }
 
+.logo-entrance {
+  animation: fall-down 0.7s linear both;
+}
+
+@keyframes fall-down {
+  0% {
+    transform: translateY(-300px) scale(1, 1);
+  }
+  55% {
+    transform: translateY(0) scale(1.2, 0.8);
+  }
+  70% {
+    transform: translateY(-40px) scale(1, 1);
+  }
+  80% {
+    transform: translateY(0) scale(1.15, 0.85);
+  }
+  90% {
+    transform: translateY(-15px) scale(1, 1);
+  }
+  98% {
+    transform: translateY(0) scale(1.12, 0.88);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+.nav-bar-entrance {
+  animation: fade 0.6s 0.3s ease-in backwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media (min-width: 600px) {
   .nav-link {
     font-size: 1.15rem;
@@ -114,6 +174,7 @@
 #xunchuan {
   position: absolute;
   left: 22%;
+  opacity: 0;
 }
 
 #web {
@@ -123,6 +184,22 @@
   opacity: 0;
 }
 
+.hi-entrance {
+  animation: fade-in 0.9s 1s ease-in both;
+}
+
+.im-entrance {
+  animation: fade-in 0.9s 2s ease-in both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media (min-width: 465px) {
   #hi {
     left: 15%;
@@ -329,23 +406,88 @@
   justify-content: center;
   letter-spacing: 0.2px;
   line-height: 1.6;
-  padding-right: 10rem;
 }
 
 .bio-wrapper h1 {
   font-family: Comfortaa, sans-serif;
-  font-size: 1.85rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 1.6rem;
-  color: #94b7db;
+  color: #32bee9;
 }
 
 .bio-wrapper p {
-  font-size: 1.25rem;
+  font-size: 0.9rem;
   margin-bottom: 1.3rem;
   font-weight: 400;
 }
 
+@media (min-width: 576px) {
+  .bio-wrapper h1 {
+    font-size: 1.35rem;
+  }
+
+  .bio-wrapper p {
+    font-size: 0.95rem;
+  }
+}
+@media (min-width: 850px) {
+  .bio-wrapper {
+    padding-right: 2rem;
+  }
+
+  .bio-wrapper h1 {
+    font-size: 1.45rem;
+  }
+
+  .bio-wrapper p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 950px) {
+  .bio-wrapper {
+    padding-right: 5rem;
+  }
+
+  .bio-wrapper h1 {
+    font-size: 1.55rem;
+  }
+
+  .bio-wrapper p {
+    font-size: 1.05rem;
+  }
+}
+@media (min-width: 1100px) {
+  .bio-wrapper {
+    padding-right: 7rem;
+  }
+}
+@media (min-width: 1200px) {
+  .bio-wrapper {
+    padding-right: 10rem;
+  }
+
+  .bio-wrapper h1 {
+    font-size: 1.7rem;
+  }
+
+  .bio-wrapper p {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1500px) {
+  .bio-wrapper {
+    padding-right: 15rem;
+  }
+
+  .bio-wrapper h1 {
+    font-size: 1.9rem;
+  }
+
+  .bio-wrapper p {
+    font-size: 1.35rem;
+  }
+}
 #contact {
   display: flex;
   flex-direction: column;
@@ -374,25 +516,138 @@
   letter-spacing: 0.5px;
 }
 
-.icons {
-  position: relative;
-  max-width: 400px;
-  top: 4rem;
+footer {
+  display: none !important;
+}
+
+.footer-icons {
+  flex: 1;
+  width: 80%;
+  max-width: 375px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.icons a {
+.footer-icons a {
   color: inherit;
   text-decoration: inherit;
 }
 
-.icons i {
-  font-size: 1.5rem;
+.footer-icons i {
+  font-size: 1.1rem;
+  opacity: 0.9;
   cursor: pointer;
 }
 
+.email-dropdown-block {
+  position: relative;
+}
+
+.email-dropdown {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  background-color: #35345f;
+  padding: 2px 0;
+  font-size: 0.6rem;
+  border-radius: 6px;
+}
+
+#email-icon:hover + .email-dropdown, .email-dropdown:hover {
+  display: block;
+  cursor: pointer;
+}
+
+.email-dropdown .line-break {
+  opacity: 0.1;
+  background-color: #6d6d6d;
+  height: 1px;
+}
+
+.email-option {
+  padding: 0.5rem;
+  opacity: 0.8;
+  font-weight: 300;
+  letter-spacing: 0.1px;
+}
+
+.email-option:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.email-address {
+  opacity: 1;
+  font-weight: 500;
+}
+
+.email-address:hover {
+  box-shadow: 0 0;
+  cursor: auto;
+}
+
+.copy-email-button {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+}
+
+.footer-text p {
+  margin-bottom: 0.1rem;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.teo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.teo:hover {
+  text-decoration: underline;
+  color: #69aff5;
+  opacity: 0.9;
+}
+
+@media (min-width: 576px) {
+  .footer-icons i {
+    font-size: 1.3rem;
+  }
+
+  .footer-text p {
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .email-dropdown {
+    font-size: 0.8rem;
+  }
+
+  .email-option {
+    padding: 0.6rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer-icons i {
+    font-size: 1.5rem;
+  }
+
+  .footer-text p {
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 1000px) {
+  .email-dropdown {
+    font-size: 0.9rem;
+  }
+
+  .email-option {
+    padding: 0.8rem;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -405,4 +660,16 @@ body {
 
 section {
   min-height: 100vh;
+}
+
+main {
+  display: none;
+}
+
+nav {
+  visibility: hidden;
+}
+
+footer {
+  visibility: hidden;
 }
